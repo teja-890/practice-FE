@@ -1,0 +1,41 @@
+.a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+mat-card{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width:500px;
+  margin-top: 100px;
+  border:3px solid yellow;
+  background-color:aliceblue;
+}
+
+.b {
+  width: 400px;
+}
+img{
+  width:170px
+}
+p{
+  font-size: 17px;
+  font-weight: 500;
+  margin-top:20px ;
+  
+}
+.aa{
+  display: flex;
+  font-display: flex-end;
+  margin-left: 70px;
+}
+.move{
+  margin-top: 9px;
+}
+
+.button{
+  display: inline-block;
+}

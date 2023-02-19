@@ -1,0 +1,55 @@
+<!-- <form class="a" [formGroup]="formData" #a="ngForm">
+
+    <mat-form-field class="b" appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Enter Username" [(ngModel)]="u.username" formControlName="uname">
+    </mat-form-field>
+
+    <mat-form-field class="b" appearance="fill">
+      <mat-label>EmailId</mat-label>
+      <input matInput placeholder="Enter EmailId" [(ngModel)]="u.email" formControlName="email">
+  </mat-form-field>
+
+    <mat-form-field class="b" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Enter Password" [(ngModel)]="u.password" formControlName="password">
+    </mat-form-field>
+
+  <div class="c">
+     <button mat-raised-button color="primary" (click)="submit()">Register</button>
+  </div>
+
+</form> -->
+
+
+<mat-card>
+  <form class="a" align="center" [formGroup]="signup"  #a="ngForm">
+  
+    <!-- <mat-icon matSuffix class="z">account_circle</mat-icon> -->
+    <img src="https://cdn-icons-png.flaticon.com/512/5087/5087607.png">
+  
+    <mat-form-field class="b" id="b" appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Enter Username" formControlName="username" [(ngModel)]="u.username">
+      <mat-error>Username is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="b" appearance="fill">
+      <mat-label>EmailId</mat-label>
+      <input matInput placeholder="Enter EmailId" formControlName="email" [(ngModel)]="u.email">
+      <mat-error>EmailId is required</mat-error>
+     </mat-form-field>
+  
+    <mat-form-field class="b" appearance="fill">
+     <mat-label>Password</mat-label>
+     <input matInput placeholder="Enter Password" formControlName="password" [(ngModel)]="u.password">
+     <mat-error>Password is required</mat-error>
+    </mat-form-field>
+  
+  <div class="button">
+   <button mat-raised-button color="primary" routerLink="">Back</button>
+   <button mat-raised-button color="primary" (click)="submit()" [disabled]="signup.invalid">Register</button>
+   </div>
+
+  </form>
+  </mat-card>

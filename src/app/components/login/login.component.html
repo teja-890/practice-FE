@@ -1,0 +1,53 @@
+<!-- <form class="a" [formGroup]="formData" #a="ngForm">
+
+    <mat-form-field class="b" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Enter Username" [(ngModel)]="b.username" formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field class="b" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Enter Password" [(ngModel)]="b.password" formControlName="password">
+    </mat-form-field>
+
+  
+     <button mat-raised-button color="primary" (click)="submit()">Login</button><br>
+
+   <div>
+       <div class="aa">new user?</div>
+       <div class="bb">
+           <button mat-raised-button color="accent" routerLink="/register">Create New Account</button>
+       </div>
+  </div>
+
+</form> -->
+
+<mat-card>
+<form class="a" align="center" [formGroup]="login"  #a="ngForm">
+
+  <!-- <mat-icon matSuffix class="z">account_circle</mat-icon> -->
+  <img src="assets\login-icon-3060.png">
+
+  <mat-form-field class="b" id="b" appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="Enter Username" formControlName="username" [(ngModel)]="b.username">
+    <mat-icon matSuffix>account_circle</mat-icon>
+    <mat-error>Username is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="b" appearance="fill">
+   <mat-label>Password</mat-label>
+   <input matInput placeholder="Enter Password" formControlName="password" [(ngModel)]="b.password" [type]="hide ? 'password' : 'text'">
+   <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+   </button>
+   <mat-error>Password is required</mat-error>
+  </mat-form-field>
+
+ <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+ <div class="aa">
+ <p>New User please register here</p>
+ <button class="move" mat-button color="primary" routerLink="/register">Register?</button>
+ </div>
+</form>
+</mat-card>

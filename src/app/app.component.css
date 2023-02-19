@@ -1,0 +1,10 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .navbar{
+    background-color:#003088;
+    /* background-color: #fff; */
+    display: flex;
+    justify-content: center;
+}

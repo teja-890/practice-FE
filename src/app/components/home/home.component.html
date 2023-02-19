@@ -1,0 +1,63 @@
+<body>
+  <nav style="background-color:lightblue;">
+    <div class="row">
+    <div class="col-6">
+      <img src="assets\Burke (1).webp" class="image">
+    </div>
+        <div class="col-6 p-5 example-card">
+            <mat-card layout-align="center center" layout-align="top top">
+                <mat-card-header>
+                    <div layout-align="center center"><br>
+                        <h1 class="text-primary">Switch & Save</h1>
+                        <blockquote class="blockquote">
+                            <p>You could save an average of $741 on Auto and Home. Call 1-800-974-6755 now to get a quote.</p>
+                        </blockquote>
+                    </div>
+                </mat-card-header>
+                <mat-card-content>
+                    <form class="form" [formGroup]="quote">
+                        <table class="example-full-width" align="center">
+                            <tr>
+                                <td>
+                                    <mat-form-field class="full-width input-group" appearance="outline">
+                                        <mat-select>
+                                            <mat-option *ngFor="let insurance of insurances" [value]="insurance.value">
+                                                <img src="{{insurance.img}}" class="img"> {{insurance.viewValue}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field><br>
+                                    <div class="input-group">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>ZIP Code</mat-label>
+                                            <input matInput type="text" class="form-control" maxlength="6" name="pincode" formControlName="pincode">
+                                        </mat-form-field>
+                                        <span class="input-group-btn" style="padding:4px;"> <button type="button"
+                                                class="btn btn-outline-primary btn-lg input-append"
+                                                style="padding: 9px;" (click)="getQuote()" routerLink="/quote">Get a Quote</button>
+                                        </span>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                </mat-card-content>
+                <mat-card-actions>
+                    <a href="https://esales.farmers.com/fastquote/?retrieve=true&_ga=2.193262637.1414674612.1670495504-59038769.1670495504">Retrieve
+                        a saved quote</a>
+                </mat-card-actions>
+
+            </mat-card>
+        </div>
+        </div>
+    </nav>
+
+    
+    <footer class="bg-light text-center">
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+            Footer
+        </div>
+    </footer>
+</body>
+

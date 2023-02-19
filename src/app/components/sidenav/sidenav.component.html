@@ -1,0 +1,14 @@
+<mat-sidenav-container id="container" fullscreen>
+    <mat-sidenav mode="side" opened class="sidenav">
+      <div class="mat-drawer-inner-container" id="style">
+    <div title="Report" class="heading">REPORT</div>
+    <mat-nav-list>
+      <app-get-quote></app-get-quote>
+    </mat-nav-list>
+    </div>
+  </mat-sidenav>
+    <mat-sidenav-content>
+    <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+

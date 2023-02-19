@@ -1,0 +1,219 @@
+<mat-horizontal-stepper [linear]="isLinear" #stepper class="a">
+
+  <mat-step [stepControl]="firstFormGroup">
+    <mat-card>
+    <form [formGroup]="firstFormGroup" class="form">
+      <ng-template matStepLabel>Personal Info</ng-template>
+
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name" formControlName="fname">
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name" formControlName="lname">
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>EmailId</mat-label>
+        <input matInput placeholder="EmailId" formControlName="email">
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Mobile</mat-label>
+        <input matInput placeholder="Mobile" formControlName="mobile">
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+    </mat-card>
+  </mat-step>
+
+
+
+  <mat-step [stepControl]="secondFormGroup">
+    <mat-card>
+    <form [formGroup]="secondFormGroup" class="form">
+      <ng-template matStepLabel>Job Description</ng-template>
+
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Designation</mat-label>
+        <input matInput placeholder="Designation" formControlName="designation">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Salary</mat-label>
+        <input matInput placeholder="Salary" formControlName="salary">
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+    </mat-card>
+  </mat-step>
+
+
+
+  <mat-step [stepControl]="thirdFormGroup">
+    <mat-card>
+    <form [formGroup]="thirdFormGroup" class="form">
+      <ng-template matStepLabel>Job Details</ng-template>
+
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Address" formControlName="address">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Pincode</mat-label>
+        <input matInput placeholder="Pincode" formControlName="pincode" [(ngModel)]="pincode">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>District</mat-label>
+        <input matInput placeholder="District" formControlName="district" [(ngModel)]="district">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>State</mat-label>
+        <input matInput placeholder="State" formControlName="state" [(ngModel)]="state">
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+    </mat-card>
+  </mat-step>
+
+
+
+  <mat-step [stepControl]="fourthFormGroup">
+    <!-- <mat-card> -->
+    <form [formGroup]="fourthFormGroup" class="form">
+      <ng-template matStepLabel>Policies</ng-template>
+      <mat-card>
+        <!-- <button class="b" mat-button matSuffix>calculate?</button> -->
+        <a (click)="openform()" class="b">calculate?</a><br>
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Kilo Meters</mat-label>
+        <input matInput placeholder="KM's travelled by vehicle" formControlName="distance" [value]="km">
+      </mat-form-field>
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Car Age</mat-label>
+        <input matInput placeholder="Car Age" formControlName="carage" [value]="age">
+      </mat-form-field>
+      </mat-card>
+      <mat-card>
+      <section class="example-section" *ngIf="appear">
+        <mat-checkbox class="example-margin">{{responsedata1}}</mat-checkbox>
+      </section>
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>VIN number</mat-label>
+        <input matInput placeholder="Enter VIN number" formControlName="vin">
+      </mat-form-field>
+      <button mat-button (click)="check()">check</button>
+
+      <section class="example-section" *ngIf="appear">
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Fuel Type</mat-label>
+          <input matInput placeholder="Fuel Type"  [value]="this.obj.fuelType">
+        </mat-form-field>
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Price</mat-label>
+          <input matInput placeholder="Price" [value]="this.obj.price">
+        </mat-form-field>
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Engine Capacity</mat-label>
+          <input matInput placeholder="Engine Capacity" [value]="this.obj.engineCapacity">
+
+        </mat-form-field>
+      </section>
+
+</mat-card>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+    <!-- </mat-card> -->
+  </mat-step>
+ 
+
+
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+  
+    <!-- <mat-list>
+	 <mat-list-item> <strong>First Name:</strong> {{ this.firstFormGroup.value.fname }}</mat-list-item>
+   <mat-list-item> <strong>Last Name:</strong> {{ this.firstFormGroup.value.lname }}</mat-list-item>
+   <mat-list-item> <strong>EmailId:</strong> {{ this.firstFormGroup.value.email }}</mat-list-item>
+	 <mat-list-item> <strong>Mobile:</strong> {{ this.firstFormGroup.value.mobile }}</mat-list-item>
+	 <mat-list-item> <strong>Designation:</strong> {{ this.secondFormGroup.value.designation }}</mat-list-item>
+	 <mat-list-item> <strong>Salary:</strong> {{ this.secondFormGroup.value.salary }}</mat-list-item>
+   <mat-list-item> <strong>Address:</strong> {{ this.thirdFormGroup.value.address }}</mat-list-item>
+   <mat-list-item> <strong>Pincode:</strong> {{ this.thirdFormGroup.value.pincode }}</mat-list-item>
+   <mat-list-item> <strong>District:</strong> {{ this.thirdFormGroup.value.district }}</mat-list-item>
+   <mat-list-item> <strong>State:</strong> {{ this.thirdFormGroup.value.state }}</mat-list-item>
+	 <mat-list-item> <strong>District:</strong> {{ this.fourthFormGroup.value.district }}</mat-list-item>
+   <mat-list-item> <strong>State:</strong> {{ this.fourthFormGroup.value.p }}</mat-list-item>
+  </mat-list> -->
+
+  <table>
+    <tr>
+      <td><strong>First Name:</strong></td>
+      <td>{{ this.firstFormGroup.value.fname }}</td>
+    </tr>
+    <tr>
+      <td><strong>Last Name:</strong></td>
+      <td>{{ this.firstFormGroup.value.lname }}</td>
+    </tr>
+    <tr>
+      <td><strong>EmailId:</strong></td>
+      <td>{{ this.firstFormGroup.value.email }}</td>
+    </tr>
+    <tr>
+      <td><strong>Mobile:</strong></td>
+      <td>{{ this.firstFormGroup.value.mobile }}</td>
+    </tr>
+    <tr>
+      <td><strong>Designation:</strong></td>
+      <td>{{ this.secondFormGroup.value.designation }}</td>
+    </tr>
+    <tr>
+      <td><strong>Salary:</strong></td>
+      <td>{{ this.secondFormGroup.value.salary }}</td>
+    </tr>
+    <tr>
+      <td><strong>Address:</strong></td>
+      <td>{{ this.thirdFormGroup.value.address }}</td>
+    </tr>
+    <tr>
+      <td><strong>Pincode:</strong></td>
+      <td>{{ this.thirdFormGroup.value.pincode }}</td>
+    </tr>
+    <tr>
+      <td><strong>District:</strong></td>
+      <td>{{ this.thirdFormGroup.value.district }}</td>
+    </tr>
+    <tr>
+      <td><strong>State:</strong></td>
+      <td>{{ this.thirdFormGroup.value.state }}</td>
+    </tr>
+  </table>
+
+
+  
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button (click)="submit()">Submit</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+
+<router-outlet></router-outlet>
